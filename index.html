@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevQuiz - Multi-Category Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="app-header" class="quiz-header">
+        <h1 class="logo-text">DevQuiz Hub</h1>
+        <div class="category-nav">
+            <button class="nav-btn" onclick="switchCategory('html')">HTML</button>
+            <button class="nav-btn" onclick="switchCategory('css')">CSS</button>
+            <button class="nav-btn" onclick="switchCategory('js')">JavaScript</button>
+        </div>
+    </header>
+
+    <main class="app">
+        
+        <div id="homepage-view" class="view-panel">
+            <div class="logo-box">
+                <img src="icon.png" class="logo-icon" alt="image not loaded">
+            </div>
+            <h2>Welcome to DevQuiz Hub!</h2>
+            <p class="about-text">
+                Test your engineering skills across fundamental web technologies. Select a language from the navigation bar above to begin a timed interactive assessment module. Each quiz contains 10 questions with a strict 10-minute timer window.
+            </p>
+            <p class="prompt-text">Choose a category above to start your quiz!</p>
+        </div>
+
+        <div id="quiz-view" class="view-panel hidden">
+            <div class="quiz-meta">
+                <span id="current-badge" class="category-badge">HTML</span>
+                <div id="timer-box" class="timer-capsule">
+                    ⏱️ Time Remaining: <span id="timer-countdown">10:00</span>
+                </div>
+            </div>
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                </div>
+            
+            <div class="action-row">
+                <button id="next-btn">Next</button>
+                <button id="finish-home-btn" class="accent-btn hidden" onclick="showHome()">Return Home</button>
+            </div>
+        </div>
+
+        <div id="scoreboard-view" class="view-panel hidden">
+            <h2>Your Global Performance Profile</h2>
+            <p class="about-text">Below are your current scores across all subjects taken during this session:</p>
+            
+            <div class="score-card-grid">
+                <div class="score-card metrics-html">
+                    <h3>HTML Quiz</h3>
+                    <p class="score-stat"><span id="score-html">0</span>/10</p>
+                </div>
+                <div class="score-card metrics-css">
+                    <h3>CSS Quiz</h3>
+                    <p class="score-stat"><span id="score-css">0</span>/10</p>
+                </div>
+                <div class="score-card metrics-js">
+                    <h3>JavaScript Quiz</h3>
+                    <p class="score-stat"><span id="score-js">0</span>/10</p>
+                </div>
+            </div>
+            <button class="btn return-home-accent" onclick="showHome()">Return Home</button>
+        </div>
+
+    </main>
+
+    <footer id="app-footer" class="quiz-footer">
+        <div class="footer-content">
+            <p class="copy-notice">&copy; 2026 DevQuiz Hub | Quiz Game Application</p>
+            <button id="view-score-btn" class="footer-score-btn">&#x1F4CA View Session Scores</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
